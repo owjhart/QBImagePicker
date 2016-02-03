@@ -30,7 +30,7 @@
     imagePickerController.mediaType = QBImagePickerMediaTypeImage;
     imagePickerController.assetMediaSubtypes = @[@(PHAssetMediaSubtypePhotoLive)];
     imagePickerController.allowsMultipleSelection = (indexPath.section == 1);
-    imagePickerController.showsNumberOfSelectedAssets = YES;
+    imagePickerController.showsNumberOfSelectedItems = YES;
     
     if (indexPath.section == 1) {
         switch (indexPath.row) {
@@ -49,7 +49,7 @@
 
             case 4:
                 imagePickerController.maximumNumberOfSelection = 2;
-                [imagePickerController.selectedAssets addObject:[PHAsset fetchAssetsWithOptions:nil].lastObject];
+                [imagePickerController.selectedItems addObject:[PHAsset fetchAssetsWithOptions:nil].lastObject];
                 break;
                 
             default:
@@ -63,10 +63,10 @@
 
 #pragma mark - QBImagePickerControllerDelegate
 
-- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingItems:(NSArray *)items
 {
     NSLog(@"Selected assets:");
-    NSLog(@"%@", assets);
+    NSLog(@"%@", items);
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }

@@ -1,5 +1,5 @@
 //
-//  QBAssetCell.h
+//  QBItemCell.h
 //  QBImagePicker
 //
 //  Created by Katsuma Tanaka on 2015/04/03.
@@ -10,7 +10,7 @@
 
 @class QBVideoIndicatorView;
 
-@interface QBAssetCell : UICollectionViewCell
+@interface QBItemCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet QBVideoIndicatorView *videoIndicatorView;

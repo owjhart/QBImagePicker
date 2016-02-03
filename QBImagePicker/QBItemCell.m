@@ -1,20 +1,20 @@
 //
-//  QBAssetCell.m
+//  QBItemCell.m
 //  QBImagePicker
 //
 //  Created by Katsuma Tanaka on 2015/04/03.
 //  Copyright (c) 2015 Katsuma Tanaka. All rights reserved.
 //
 
-#import "QBAssetCell.h"
+#import "QBItemCell.h"
 
-@interface QBAssetCell ()
+@interface QBItemCell ()
 
 @property (weak, nonatomic) IBOutlet UIView *overlayView;
 
 @end
 
-@implementation QBAssetCell
+@implementation QBItemCell
 
 - (void)setSelected:(BOOL)selected
 {

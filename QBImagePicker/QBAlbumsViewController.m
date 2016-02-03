@@ -20,12 +20,6 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     return CGSizeMake(size.width * scale, size.height * scale);
 }
 
-@interface QBImagePickerController (Private)
-
-@property (nonatomic, strong) NSBundle *assetBundle;
-
-@end
-
 @interface QBAlbumsViewController () <PHPhotoLibraryChangeObserver>
 
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *doneButton;
@@ -101,9 +95,9 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (IBAction)done:(id)sender
 {
-    if ([self.imagePickerController.delegate respondsToSelector:@selector(qb_imagePickerController:didFinishPickingAssets:)]) {
+    if ([self.imagePickerController.delegate respondsToSelector:@selector(qb_imagePickerController:didFinishPickingItems:)]) {
         [self.imagePickerController.delegate qb_imagePickerController:self.imagePickerController
-                                               didFinishPickingAssets:self.imagePickerController.selectedAssets.array];
+                                               didFinishPickingItems:self.imagePickerController.selectedItems.array];
     }
 }
 
@@ -128,18 +122,18 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (void)updateSelectionInfo
 {
-    NSMutableOrderedSet *selectedAssets = self.imagePickerController.selectedAssets;
+    NSMutableOrderedSet *selectedItems = self.imagePickerController.selectedItems;
     
-    if (selectedAssets.count > 0) {
+    if (selectedItems.count > 0) {
         NSBundle *bundle = self.imagePickerController.assetBundle;
         NSString *format;
-        if (selectedAssets.count > 1) {
+        if (selectedItems.count > 1) {
             format = NSLocalizedStringFromTableInBundle(@"assets.toolbar.items-selected", @"QBImagePicker", bundle, nil);
         } else {
             format = NSLocalizedStringFromTableInBundle(@"assets.toolbar.item-selected", @"QBImagePicker", bundle, nil);
         }
         
-        NSString *title = [NSString stringWithFormat:format, selectedAssets.count];
+        NSString *title = [NSString stringWithFormat:format, selectedItems.count];
         [(UIBarButtonItem *)self.toolbarItems[1] setTitle:title];
     } else {
         [(UIBarButtonItem *)self.toolbarItems[1] setTitle:@""];
@@ -283,7 +277,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 
 - (BOOL)isMinimumSelectionLimitFulfilled
 {
-    return (self.imagePickerController.minimumNumberOfSelection <= self.imagePickerController.selectedAssets.count);
+    return (self.imagePickerController.minimumNumberOfSelection <= self.imagePickerController.selectedItems.count);
 }
 
 - (BOOL)isMaximumSelectionLimitReached
@@ -291,7 +285,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     NSUInteger minimumNumberOfSelection = MAX(1, self.imagePickerController.minimumNumberOfSelection);
     
     if (minimumNumberOfSelection <= self.imagePickerController.maximumNumberOfSelection) {
-        return (self.imagePickerController.maximumNumberOfSelection <= self.imagePickerController.selectedAssets.count);
+        return (self.imagePickerController.maximumNumberOfSelection <= self.imagePickerController.selectedItems.count);
     }
     
     return NO;

@@ -14,13 +14,12 @@
 @protocol QBImagePickerControllerDelegate <NSObject>
 
 @optional
-- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets;
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingItems:(NSArray *)items;
 - (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController;
 
-- (BOOL)qb_imagePickerController:(QBImagePickerController *)imagePickerController shouldSelectAsset:(PHAsset *)asset;
-- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didSelectAsset:(PHAsset *)asset;
-- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didDeselectAsset:(PHAsset *)asset;
-
+- (BOOL)qb_imagePickerController:(QBImagePickerController *)imagePickerController shouldSelectItem:(NSObject *)item;
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didSelectItem:(NSObject *)item;
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didDeselectItem:(NSObject *)item;
 @end
 
 typedef NS_ENUM(NSUInteger, QBImagePickerMediaType) {
@@ -31,9 +30,11 @@ typedef NS_ENUM(NSUInteger, QBImagePickerMediaType) {
 
 @interface QBImagePickerController : UIViewController
 
+@property (nonatomic, strong) NSBundle *assetBundle;
+
 @property (nonatomic, weak) id<QBImagePickerControllerDelegate> delegate;
 
-@property (nonatomic, strong, readonly) NSMutableOrderedSet *selectedAssets;
+@property (nonatomic, strong, readonly) NSMutableOrderedSet *selectedItems;
 
 @property (nonatomic, copy) NSArray *assetCollectionSubtypes;
 @property (nonatomic, copy) NSArray *assetMediaSubtypes;
@@ -45,9 +46,11 @@ typedef NS_ENUM(NSUInteger, QBImagePickerMediaType) {
 @property (nonatomic, assign) NSUInteger maximumNumberOfSelection;
 
 @property (nonatomic, copy) NSString *prompt;
-@property (nonatomic, assign) BOOL showsNumberOfSelectedAssets;
+@property (nonatomic, assign) BOOL showsNumberOfSelectedItems;
 
 @property (nonatomic, assign) NSUInteger numberOfColumnsInPortrait;
 @property (nonatomic, assign) NSUInteger numberOfColumnsInLandscape;
+
++ (NSBundle *)QBImagePickerBundle;
 
 @end
