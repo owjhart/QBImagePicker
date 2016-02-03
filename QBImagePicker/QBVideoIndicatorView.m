@@ -8,21 +8,52 @@
 
 #import "QBVideoIndicatorView.h"
 
+@interface QBVideoIndicatorView ()
+{
+	CAGradientLayer *gradientLayer;
+}
+@end
+
 @implementation QBVideoIndicatorView
 
-- (void)awakeFromNib
+- (id)initWithFrame:(CGRect)frame
 {
-    [super awakeFromNib];
-    
-    // Add gradient layer
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = self.bounds;
-    gradientLayer.colors = @[
-                             (__bridge id)[[UIColor clearColor] CGColor],
-                             (__bridge id)[[UIColor blackColor] CGColor]
-                             ];
-    
-    [self.layer insertSublayer:gradientLayer atIndex:0];
+	self = [super initWithFrame:frame];
+	if (self != nil)
+	{
+		[self commonInit];
+	}
+	return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+	self = [super initWithCoder:aDecoder];
+	if (self != nil)
+	{
+		[self commonInit];
+	}
+	return self;
+}
+
+- (void)commonInit
+{
+	// Add gradient layer
+	gradientLayer = [CAGradientLayer layer];
+	
+	gradientLayer.colors = @[
+							 (__bridge id)[[UIColor clearColor] CGColor],
+							 (__bridge id)[[UIColor blackColor] CGColor]
+							 ];
+	
+	[self.layer insertSublayer:gradientLayer atIndex:0];
+}
+
+- (void)layoutSubviews
+{
+	[super layoutSubviews];
+	
+	gradientLayer.frame = self.bounds;
 }
 
 @end

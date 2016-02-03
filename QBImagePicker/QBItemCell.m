@@ -8,6 +8,8 @@
 
 #import "QBItemCell.h"
 
+#import "QBVideoIndicatorView.h"
+
 @interface QBItemCell ()
 
 @property (weak, nonatomic) IBOutlet UIView *overlayView;
@@ -22,6 +24,13 @@
     
     // Show/hide overlay view
     self.overlayView.hidden = !(selected && self.showsOverlayViewWhenSelected);
+}
+
+- (void)prepareForReuse
+{
+	[super prepareForReuse];
+	
+	self.videoIndicatorView.hidden = YES;
 }
 
 @end
