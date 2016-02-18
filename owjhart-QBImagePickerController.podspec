@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = "QBImagePickerController"
+  s.name             = "owjhart-QBImagePickerController"
   s.version          = "1.0.0"
   s.summary          = "A clone of QBImagePickerController (v3.4.0) with multiple selection support."
   s.homepage         = "https://github.com/owjhart/QBImagePicker"
