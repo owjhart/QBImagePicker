@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <QBImagePicker/QBImagePicker.h>
+#import <OHQBImagePicker/QBImagePicker.h>
 
 @interface ViewController () <QBImagePickerControllerDelegate>
 
