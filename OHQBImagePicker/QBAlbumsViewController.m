@@ -180,7 +180,20 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *assetCollection, NSUInteger index, BOOL *stop) {
         [assetCollections addObject:assetCollection];
     }];
-    
+	
+	// Fetch "Recently Deleted" album
+	if (self.imagePickerController.includeRecentlyDeletedAlbum)
+	{
+		PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum
+																			  subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+		[fetchResult enumerateObjectsUsingBlock:^(PHAssetCollection *assetCollection, NSUInteger index, BOOL *stop) {
+			if ([assetCollection.localizedTitle isEqualToString:@"Recently Deleted"])
+			{
+				[assetCollections addObject:assetCollection];
+			}
+		}];
+	}
+
     self.assetCollections = [assetCollections filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(PHAssetCollection * _Nonnull assetCollection, NSDictionary<NSString *,id> * _Nullable bindings) {
         
         if (!self.imagePickerController.excludeEmptyAlbums)
@@ -203,19 +216,19 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
                 break;
         }
         
-        NSPredicate *mediaSubTtypePredicate;
+        NSPredicate *mediaSubTypePredicate;
         if (self.imagePickerController.assetMediaSubtypes)
         {
-            mediaSubTtypePredicate = [NSPredicate predicateWithFormat:@"mediaSubtype in %@ ", self.imagePickerController.assetMediaSubtypes];
+            mediaSubTypePredicate = [NSPredicate predicateWithFormat:@"mediaSubtype in %@ ", self.imagePickerController.assetMediaSubtypes];
         }
         NSMutableArray *predicates = [@[] mutableCopy];
         if (mediaTypePredicate)
         {
             [predicates addObject:mediaTypePredicate];
         }
-        if (mediaSubTtypePredicate)
+        if (mediaSubTypePredicate)
         {
-            [predicates addObject:mediaSubTtypePredicate];
+            [predicates addObject:mediaSubTypePredicate];
         }
         if (predicates.count > 0)
         {
@@ -354,8 +367,8 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     }
     if (predicates.count > 0)
     {
-        NSCompoundPredicate *preidcate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
-        options.predicate = preidcate;
+        NSCompoundPredicate *predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
+        options.predicate = predicate;
     }
 
     

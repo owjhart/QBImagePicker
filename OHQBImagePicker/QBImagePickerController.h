@@ -39,6 +39,7 @@ typedef NS_ENUM(NSUInteger, QBImagePickerMediaType) {
 @property (nonatomic, copy) NSArray *assetCollectionSubtypes;
 @property (nonatomic, copy) NSArray *assetMediaSubtypes;
 @property (nonatomic, assign) BOOL excludeEmptyAlbums;
+@property (nonatomic, assign) BOOL includeRecentlyDeletedAlbum;
 @property (nonatomic, assign) QBImagePickerMediaType mediaType;
 
 @property (nonatomic, assign) BOOL allowsMultipleSelection;
