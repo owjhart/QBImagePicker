@@ -39,12 +39,23 @@ static NSString * const reuseIdentifier = @"QBItemCell";
 	self.collectionView.allowsMultipleSelection = self.imagePickerController.allowsMultipleSelection;
 
 	[self.collectionView reloadData];
+}
+
+- (void)viewDidLayoutSubviews
+{
+	[super viewDidLayoutSubviews];
 	
-	// Scroll to bottom
-	NSUInteger itemCount = [self.collectionView numberOfItemsInSection:0];
-	if (itemCount > 0 && self.isMovingToParentViewController && !self.disableScrollToBottom) {
-		NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(itemCount - 1) inSection:0];
-		[self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
+	if (!self.disableScrollToBottom)
+	{
+		self.disableScrollToBottom = YES;
+
+		// Scroll to bottom
+		NSUInteger itemCount = [self.collectionView numberOfItemsInSection:0];
+		if (itemCount > 0)
+		{
+			NSIndexPath *indexPath = [NSIndexPath indexPathForItem:(itemCount - 1) inSection:0];
+			[self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:NO];
+		}
 	}
 }
 

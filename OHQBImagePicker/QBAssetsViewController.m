@@ -194,24 +194,23 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
                 break;
         }
         
-        NSPredicate *mediaSubTtypePredicate;
+        NSPredicate *mediaSubTypePredicate;
         if (self.imagePickerController.assetMediaSubtypes)
         {
-            mediaSubTtypePredicate = [NSPredicate predicateWithFormat:@"mediaSubtype in %@ ", self.imagePickerController.assetMediaSubtypes];
+            mediaSubTypePredicate = [NSPredicate predicateWithFormat:@"mediaSubtype in %@ ", self.imagePickerController.assetMediaSubtypes];
         }
         NSMutableArray *predicates = [@[] mutableCopy];
         if (mediaTypePredicate)
         {
             [predicates addObject:mediaTypePredicate];
         }
-        if (mediaSubTtypePredicate)
+        if (mediaSubTypePredicate)
         {
-            [predicates addObject:mediaSubTtypePredicate];
+            [predicates addObject:mediaSubTypePredicate];
         }
         if (predicates.count > 0)
         {
-            NSCompoundPredicate *preidcate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
-            options.predicate = preidcate;
+            options.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:predicates];
         }
         
         self.fetchResult = [PHAsset fetchAssetsInAssetCollection:self.assetCollection options:options];
