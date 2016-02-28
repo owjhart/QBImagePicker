@@ -59,20 +59,6 @@ static NSString * const reuseIdentifier = @"QBItemCell";
 	}
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-	
-	self.disableScrollToBottom = YES;
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:animated];
-	
-	self.disableScrollToBottom = NO;
-}
-
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
 	// Save indexPath for the last item
