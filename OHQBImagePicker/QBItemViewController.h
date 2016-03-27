@@ -12,8 +12,8 @@
 @class QBItemCell;
 @interface QBItemViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic, assign) BOOL disableScrollToBottom;
 @property (nonatomic, weak) QBImagePickerController *imagePickerController;
-
 @property (nonatomic, strong) NSIndexPath *lastSelectedItemIndexPath;
 
 - (BOOL)isAutoDeselectEnabled;

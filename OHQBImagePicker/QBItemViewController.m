@@ -14,8 +14,6 @@
 
 @interface QBItemViewController ()
 
-@property (nonatomic, assign) BOOL disableScrollToBottom;
-
 @end
 
 @implementation QBItemViewController

@@ -16,6 +16,8 @@
 #import "QBImagePickerController.h"
 #import "QBAssetsViewController.h"
 
+NSString * const COLLECTION_TITLE_RECENTLY_DELETED = @"Recently Deleted";
+
 static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     return CGSizeMake(size.width * scale, size.height * scale);
 }
@@ -80,6 +82,11 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 {
     QBAssetsViewController *assetsViewController = segue.destinationViewController;
     assetsViewController.imagePickerController = self.imagePickerController;
+	
+	PHAssetCollection *collection = self.assetCollections[self.tableView.indexPathForSelectedRow.row];
+	if ([collection.localizedTitle isEqualToString:COLLECTION_TITLE_RECENTLY_DELETED])
+		assetsViewController.disableScrollToBottom = YES;
+
     assetsViewController.assetCollection = self.assetCollections[self.tableView.indexPathForSelectedRow.row];
 }
 
@@ -164,8 +171,21 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
             }
         }];
     }
-    
-    NSMutableArray *assetCollections = [NSMutableArray array];
+	
+	NSMutableArray *assetCollections = [NSMutableArray array];
+
+	// Fetch "Recently Deleted" album
+	if (self.imagePickerController.includeRecentlyDeletedAlbum)
+	{
+		PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum
+																			  subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+		[fetchResult enumerateObjectsUsingBlock:^(PHAssetCollection *assetCollection, NSUInteger index, BOOL *stop) {
+			if ([assetCollection.localizedTitle isEqualToString:COLLECTION_TITLE_RECENTLY_DELETED])
+			{
+				[assetCollections addObject:assetCollection];
+			}
+		}];
+	}
 
     // Fetch smart albums
     for (NSNumber *assetCollectionSubtype in assetCollectionSubtypes) {
@@ -180,19 +200,6 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     [userAlbums enumerateObjectsUsingBlock:^(PHAssetCollection *assetCollection, NSUInteger index, BOOL *stop) {
         [assetCollections addObject:assetCollection];
     }];
-	
-	// Fetch "Recently Deleted" album
-	if (self.imagePickerController.includeRecentlyDeletedAlbum)
-	{
-		PHFetchResult *fetchResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum
-																			  subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-		[fetchResult enumerateObjectsUsingBlock:^(PHAssetCollection *assetCollection, NSUInteger index, BOOL *stop) {
-			if ([assetCollection.localizedTitle isEqualToString:@"Recently Deleted"])
-			{
-				[assetCollections addObject:assetCollection];
-			}
-		}];
-	}
 
     self.assetCollections = [assetCollections filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(PHAssetCollection * _Nonnull assetCollection, NSDictionary<NSString *,id> * _Nullable bindings) {
         
