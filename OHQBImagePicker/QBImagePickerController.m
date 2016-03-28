@@ -63,6 +63,11 @@
 	albumsViewController.imagePickerController = self;
 }
 
+- (UIViewController *)childViewControllerForStatusBarStyle
+{
+	return self.albumsNavigationController;
+}
+
 - (NSBundle *)assetBundle
 {
 	if (_assetBundle == nil)
