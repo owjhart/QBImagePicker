@@ -388,10 +388,13 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 	CGSize itemSize = [(UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout itemSize];
 	CGSize targetSize = CGSizeScale(itemSize, [[UIScreen mainScreen] scale]);
 	
+	PHImageRequestOptions *options = [PHImageRequestOptions new];
+	options.synchronous = YES;
+
 	[self.imageManager requestImageForAsset:asset
 								 targetSize:targetSize
 								contentMode:PHImageContentModeAspectFill
-									options:nil
+									options:options
 							  resultHandler:^(UIImage *result, NSDictionary *info) {
 								  if (cell.tag == indexPath.row) {
 									  cell.imageView.image = result;
