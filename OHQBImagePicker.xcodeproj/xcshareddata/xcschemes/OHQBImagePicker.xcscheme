@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AAA8FE021ACDA079002A9710"
-               BuildableName = "QBImagePicker.framework"
-               BlueprintName = "QBImagePicker"
-               ReferencedContainer = "container:QBImagePicker.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAA8FE0D1ACDA079002A9710"
-               BuildableName = "QBImagePickerTests.xctest"
-               BlueprintName = "QBImagePickerTests"
-               ReferencedContainer = "container:QBImagePicker.xcodeproj">
+               BuildableName = "OHQBImagePicker.framework"
+               BlueprintName = "OHQBImagePicker"
+               ReferencedContainer = "container:OHQBImagePicker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AAA8FE0D1ACDA079002A9710"
-               BuildableName = "QBImagePickerTests.xctest"
-               BlueprintName = "QBImagePickerTests"
-               ReferencedContainer = "container:QBImagePicker.xcodeproj">
+               BuildableName = "OHQBImagePickerTests.xctest"
+               BlueprintName = "OHQBImagePickerTests"
+               ReferencedContainer = "container:OHQBImagePicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAA8FE021ACDA079002A9710"
-            BuildableName = "QBImagePicker.framework"
-            BlueprintName = "QBImagePicker"
-            ReferencedContainer = "container:QBImagePicker.xcodeproj">
+            BuildableName = "OHQBImagePicker.framework"
+            BlueprintName = "OHQBImagePicker"
+            ReferencedContainer = "container:OHQBImagePicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAA8FE021ACDA079002A9710"
-            BuildableName = "QBImagePicker.framework"
-            BlueprintName = "QBImagePicker"
-            ReferencedContainer = "container:QBImagePicker.xcodeproj">
+            BuildableName = "OHQBImagePicker.framework"
+            BlueprintName = "OHQBImagePicker"
+            ReferencedContainer = "container:OHQBImagePicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -97,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AAA8FE021ACDA079002A9710"
-            BuildableName = "QBImagePicker.framework"
-            BlueprintName = "QBImagePicker"
-            ReferencedContainer = "container:QBImagePicker.xcodeproj">
+            BuildableName = "OHQBImagePicker.framework"
+            BlueprintName = "OHQBImagePicker"
+            ReferencedContainer = "container:OHQBImagePicker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
