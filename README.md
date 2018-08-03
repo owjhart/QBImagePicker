@@ -45,14 +45,14 @@ A clone of UIImagePickerController with multiple selection support.
 
 1. Add `pod "OHQBImagePicker"` to Podfile
 2. Run `pod install`
-3. Add `#import <OHQBImagePicker/QBImagePicker.h>` to your code
+3. Add `#import <OHQBImagePicker/OHQBImagePicker.h>` to your ObjC code or `import OHQBImagePicker` to your Swift code.
 
 
 ### Carthage
 
 1. Add `github "questbeat/QBImagePicker"` to Cartfile
 2. Run `carthage update`
-3. Add `#import <OHQBImagePicker/QBImagePicker.h>` to your code
+3. Add `#import <OHQBImagePicker/OHQBImagePicker.h>` to your ObjC code or `import OHQBImagePicker` to your Swift code.
 
 
 
