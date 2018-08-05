@@ -1,5 +1,5 @@
 //
-//  QBImagePicker.h
+//  OHQBImagePicker.h
 //  QBImagePicker
 //
 //  Created by Katsuma Tanaka on 2015/04/03.

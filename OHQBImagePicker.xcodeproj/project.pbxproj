@@ -16,7 +16,7 @@
 		AA3AD0701ACF9A3A00BF523E /* QBVideoIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3AD06E1ACF9A3A00BF523E /* QBVideoIconView.m */; };
 		AA3AD0731ACFA06700BF523E /* QBVideoIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = AA3AD0711ACFA06700BF523E /* QBVideoIndicatorView.h */; };
 		AA3AD0741ACFA06700BF523E /* QBVideoIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3AD0721ACFA06700BF523E /* QBVideoIndicatorView.m */; };
-		AAA8FE091ACDA079002A9710 /* QBImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA8FE081ACDA079002A9710 /* QBImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AAA8FE091ACDA079002A9710 /* OHQBImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA8FE081ACDA079002A9710 /* OHQBImagePicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AAA8FE0F1ACDA079002A9710 /* OHQBImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAA8FE031ACDA079002A9710 /* OHQBImagePicker.framework */; };
 		AAA8FE161ACDA079002A9710 /* QBImagePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA8FE151ACDA079002A9710 /* QBImagePickerTests.m */; };
 		AAA8FE211ACDA090002A9710 /* QBImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = AAA8FE1F1ACDA090002A9710 /* QBImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,7 +96,7 @@
 		AA3AD0721ACFA06700BF523E /* QBVideoIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBVideoIndicatorView.m; sourceTree = "<group>"; };
 		AAA8FE031ACDA079002A9710 /* OHQBImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHQBImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8FE071ACDA079002A9710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAA8FE081ACDA079002A9710 /* QBImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBImagePicker.h; sourceTree = "<group>"; };
+		AAA8FE081ACDA079002A9710 /* OHQBImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OHQBImagePicker.h; sourceTree = "<group>"; };
 		AAA8FE0E1ACDA079002A9710 /* OHQBImagePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OHQBImagePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAA8FE141ACDA079002A9710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAA8FE151ACDA079002A9710 /* QBImagePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QBImagePickerTests.m; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		AAA8FE051ACDA079002A9710 /* OHQBImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				AAA8FE081ACDA079002A9710 /* QBImagePicker.h */,
+				AAA8FE081ACDA079002A9710 /* OHQBImagePicker.h */,
 				AA3AD0751ACFA22500BF523E /* Views */,
 				AA3AD0761ACFA23300BF523E /* ViewControllers */,
 				AAF1CA241ACE5665005F6295 /* Resources */,
@@ -336,7 +336,7 @@
 				AAF1CA1A1ACE5467005F6295 /* QBAlbumCell.h in Headers */,
 				AAA8FE5B1ACDA554002A9710 /* QBAlbumsViewController.h in Headers */,
 				AA3AD06F1ACF9A3A00BF523E /* QBVideoIconView.h in Headers */,
-				AAA8FE091ACDA079002A9710 /* QBImagePicker.h in Headers */,
+				AAA8FE091ACDA079002A9710 /* OHQBImagePicker.h in Headers */,
 				AABBF0901ACEDDFF003188A3 /* QBCheckmarkView.h in Headers */,
 				AAA8FE211ACDA090002A9710 /* QBImagePickerController.h in Headers */,
 			);
@@ -705,7 +705,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.questbeat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -721,7 +721,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.questbeat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = NO;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
