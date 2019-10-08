@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <OHQBImagePicker/QBImagePicker.h>
+#import <OHQBImagePicker/OHQBImagePicker.h>
 
 @interface ViewController () <QBImagePickerControllerDelegate>
 
@@ -28,7 +28,6 @@
     QBImagePickerController *imagePickerController = [QBImagePickerController new];
     imagePickerController.delegate = self;
     imagePickerController.mediaType = QBImagePickerMediaTypeImage;
-    imagePickerController.assetMediaSubtypes = @[@(PHAssetMediaSubtypePhotoLive)];
     imagePickerController.allowsMultipleSelection = (indexPath.section == 1);
     imagePickerController.showsNumberOfSelectedItems = YES;
     
