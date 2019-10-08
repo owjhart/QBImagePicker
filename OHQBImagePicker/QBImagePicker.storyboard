@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Photos-->
@@ -11,22 +12,23 @@
             <objects>
                 <tableViewController storyboardIdentifier="QBAlbumsViewController" id="QL5-wR-LYt" customClass="QBAlbumsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="86" sectionHeaderHeight="22" sectionFooterHeight="22" id="66K-TS-Yoc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AlbumCell" rowHeight="86" id="dSc-nm-apo" customClass="QBAlbumCell">
-                                <rect key="frame" x="0.0" y="86" width="600" height="86"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dSc-nm-apo" id="7lA-qJ-5l4">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="86"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="86"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTm-zK-fPP">
-                                            <rect key="frame" x="16" y="7" width="68" height="72"/>
+                                            <rect key="frame" x="28" y="7" width="68" height="72"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aA6-Ye-jVF">
                                                     <rect key="frame" x="4" y="0.0" width="60" height="60"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="FN5-pM-4jN"/>
                                                         <constraint firstAttribute="height" constant="60" id="oOO-Jp-ELR"/>
@@ -34,6 +36,7 @@
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7bp-En-8qW">
                                                     <rect key="frame" x="2" y="2" width="64" height="64"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="GXP-UA-8Q1"/>
                                                         <constraint firstAttribute="width" constant="64" id="Pl4-1t-5Nd"/>
@@ -41,13 +44,14 @@
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FFV-lv-81k">
                                                     <rect key="frame" x="0.0" y="4" width="68" height="68"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="68" id="5Qb-Pu-leX"/>
                                                         <constraint firstAttribute="height" constant="68" id="sYi-5u-vyi"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="68" id="LPf-oG-4uz"/>
                                                 <constraint firstAttribute="centerX" secondItem="aA6-Ye-jVF" secondAttribute="centerX" id="MGk-ae-eo0"/>
@@ -59,19 +63,22 @@
                                                 <constraint firstAttribute="centerX" secondItem="7bp-En-8qW" secondAttribute="centerX" id="p86-QG-SAY"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SeB-hL-cJJ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Album Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="SeB-hL-cJJ">
                                             <rect key="frame" x="102" y="22" width="457" height="21"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Photos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTi-mB-UBX">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Number of Photos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTi-mB-UBX">
                                             <rect key="frame" x="102" y="46" width="457" height="15"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="kTm-zK-fPP" secondAttribute="centerY" id="6QC-SU-kOo"/>
                                         <constraint firstItem="SeB-hL-cJJ" firstAttribute="left" secondItem="kTm-zK-fPP" secondAttribute="right" constant="18" id="Whp-Ou-I3l"/>
@@ -83,6 +90,7 @@
                                         <constraint firstItem="kTm-zK-fPP" firstAttribute="left" secondItem="7lA-qJ-5l4" secondAttribute="leftMargin" constant="8" id="zuV-Ye-IiO"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="countLabel" destination="PTi-mB-UBX" id="RE7-cn-ClQ"/>
                                     <outlet property="imageView1" destination="FFV-lv-81k" id="tDK-OF-ipY"/>
@@ -123,9 +131,9 @@
             <objects>
                 <collectionViewController storyboardIdentifier="QBAssetsViewController" id="QiH-NZ-ZGN" customClass="QBAssetsViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sD2-zK-ryo">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="6wp-N0-PIK">
                             <size key="itemSize" width="77.5" height="77.5"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -134,16 +142,18 @@
                         </collectionViewFlowLayout>
                         <cells/>
                         <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterView" id="sqR-h3-lW1">
-                            <rect key="frame" x="0.0" y="74" width="600" height="66"/>
+                            <rect key="frame" x="0.0" y="10" width="414" height="66"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Photos and Videos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m2s-7T-bnL">
-                                    <rect key="frame" x="0.0" y="22" width="600" height="21"/>
+                                    <rect key="frame" x="0.0" y="22.5" width="414" height="21"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="m2s-7T-bnL" firstAttribute="left" secondItem="sqR-h3-lW1" secondAttribute="left" id="8fv-Sl-lhe"/>
                                 <constraint firstAttribute="centerY" secondItem="m2s-7T-bnL" secondAttribute="centerY" id="DrY-pC-Gfi"/>
@@ -177,7 +187,7 @@
                 <navigationController storyboardIdentifier="QBAlbumsNavigationController" id="8Dq-FL-Kai" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Whc-Ry-EBq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="pNX-sT-Qig">

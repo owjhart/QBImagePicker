@@ -18,6 +18,8 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to photos for demo purposes</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
